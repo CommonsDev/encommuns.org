@@ -1,0 +1,30 @@
+
+<div ng-controller="UsageManagerCtrl">
+  <h2>Communs</h2>
+
+  <div class="workgroup">
+      
+    <table class="table table-striped">
+      <tr>
+  <th>Usage</th>
+  <th>Commun sélectionné</th>
+  <th>Pertinence sur 100</th>
+  <th>Actions</th>
+      </tr>
+      <!-- group members -->
+      <tr ng-repeat="pertinence in pertinences">
+  <td><strong>{{ pertinence.usage.label }}</strong></td>
+  <td>{{ pertinence.project.title }}</td>
+  <td>{{ pertinence.comment }}</td>
+
+  <td>
+    <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
+    <button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Voir les autres projets</button>
+  </td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
+

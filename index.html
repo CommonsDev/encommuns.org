@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Lille en Communs </title>
+    <meta name="description" content="software center">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='scripts/vendor/bootstrap/dist/css/bootstrap.min.css' rel="stylesheet" type="text/css">
+    <link href='styles/css/screen.css' rel='stylesheet' type='text/css'>
+    <link href='styles/css/login.css' rel='stylesheet' type='text/css'>
+
+    <!-- vendor includes -->        
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <!-- login box -->
+    <div id="wrap-login" class="ng-cloak" ng-show="authVars.loginrequired">
+      <div id="inner-login">
+        <div class="left">
+          <div class="title">Entrez votre identifiant pour vous connecter :</div>
+          <form name="loginForm" ng-submit="submit()" form-autofill-fix>
+            <p>
+              <label for="login-field">Email</label>
+              <input id="login-field" type="text" ng-model="authVars.username" placeholder="Votre nom d'utilisateur..." required>
+            </p>
+            <p>
+              <label for="pass-field">Password</label>
+              <input id="pass-field" type="password" ng-model="authVars.password" placeholder="Votre mot de passe..." required>
+            </p>
+            <button type="submit" ng-disabled="form.$invalid" class="submit">Se connecter</button>
+          </form>
+        </div>
+        <div class="right">
+          <ul>
+            <li><button class="account" onclick="javascript:alert('Inscriptions fermées.');">S'inscrire</button></li>
+            <li><button ng-click="authenticateGoogle()" class="gplus">Google +</button></li>
+            <li><button class="facebook">Facebook</button></li>
+          </ul>
+        </div>
+        <a href="javascript:void(0)" ng-click="loginrequired=false" class="close">Fermer</a> 
+        <!-- TODO: changer cette méthode de fermeture de l'overlay -->
+      </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <h1>Lille en communs</h1>
+
+	<div ng-switch="authVars.isAuthenticated">
+          <a ng-switch-when="true" class="user">
+            <img src="img/_TEMP/avatar.jpg" alt="user" />
+            <span>{{ authVars.username }}</span>
+	    <span><button class="btn btn-sm btn-danger" ng-click="loginService.logout()">Déconnexion</button></span>
+          </a>
+	  <a href="https://ulists.org/mailman3/lists/lille-en-communs%40ulists.org/" ng-switch-default class="user">
+	    <button class="btn btn-danger btn-sm">Rejoindre la liste de discussion</button>
+	  </a>
+	</div>
+      </div>
+    </header>
+    <div id="content">
+    <!-- <div id="col-left">
+        <div class="logo">
+          <img src="img/_TEMP/logo.png" alt="Web apps center" />
+        </div>
+        <nav>
+          <ul>
+            <li ng-class="{ active: $state.includes('apps') }" class="appli"><a ui-sref="apps">Applications</a></li>
+            <li ng-show="authVars.isAuthenticated" ng-class="{ active: $state.includes('collaborators') }" class="members"><a ui-sref="collaborators">Collaborateurs</a></li>
+            <li ng-class="{ active: $state.includes('usages') }" class="usages"><a ui-sref="usages">Communs</a></li>
+          </ul>
+        </nav>
+      </div>
+      -->
+
+      <!-- angular views -->
+      <div id="col-right" ui-view="rightcol"></div>
+
+    </div>
+    <!-- vendor includes -->
+    <script src="scripts/vendor/modernizr/modernizr.js"></script>
+
+    <!-- bower includes -->
+    <script src="scripts/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/vendor/angular/angular.js"></script>
+    <script src="scripts/vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="scripts/vendor/underscore/underscore.js"></script>
+    <script src="scripts/vendor/angular-cookies/angular-cookies.min.js"></script>
+    <script src="scripts/vendor/restangular/dist/restangular.min.js"></script>
+    <script src="scripts/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- auth -->
+    <script src="scripts/vendor/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="scripts/vendor/angular-oauth/src/js/angularOauth.js"></script>
+    <script src="scripts/vendor/angular-oauth/src/js/googleOauth.js"></script>
+    <script src="scripts/vendor/angular-unisson-auth/angular-unisson-auth.js"></script>
+
+
+    <script src="scripts/config.js"></script>
+
+    <!-- app files -->
+    <script src="scripts/lib/webappscenter/services.js"></script>
+    <script src="scripts/lib/webappscenter/controllers.js"></script>
+    <script src="scripts/lib/app.js"></script>
+
+  </body>
+</html>

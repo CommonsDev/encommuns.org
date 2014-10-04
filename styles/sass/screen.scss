@@ -1,0 +1,267 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+body {
+	font-family:Raleway,sans-serif;
+	font-size:12px;
+	float:left;
+	width:100%;
+}
+
+* {
+	@include box-sizing("border-box");
+}
+
+.workgroup {
+
+    margin-bottom: 40px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.table tr th {
+    font-weight: 600;
+}
+
+
+header {
+	height:45px;
+	background:#161719;
+	width:100%;
+
+	h1 {
+		float:left;
+	}
+
+	.container {
+		margin:0 auto;
+		width:1000px;
+
+		h1 {
+		    font-size: 15px;
+		    color: #eee;
+		    font-weight: bold;
+		    line-height: 47px;
+		    padding-left: 13px;
+		}
+	}
+
+	a.user {
+		display:block;
+		float:right;
+		color:#7bbae7;
+		text-decoration:none;
+		line-height:45px;
+		padding:1px 0 0 0;
+		padding:0 5px 0 0;
+		font-size:0.8rem;
+		
+		img {
+			margin:8px 15px 0 0;
+			float:left;
+		}
+
+		span {
+			font-weight:bold;
+		}
+	}
+}
+
+#content {
+	margin:0 auto 0;
+	width:1000px;
+	padding:14px 0 0 0;
+}
+
+#col-left {
+	width:19.5%;
+	float:left;
+	margin:0 0.5% 0 0;
+	border:1px solid #cdcdcc;
+	background:#efeeed;
+	@include border-radius(3px);
+
+	.logo {
+		background:white;
+		text-align:center;
+		padding:15px 0;
+		width:100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	ul {
+		padding:0 0 10px 0;
+
+		li {
+			display:block;
+			height:51px;
+			background:white;
+			border-top:1px solid #cdcdcc;
+
+			a {
+				display:block;
+				width:100%;
+				line-height:50px;
+				height:50px;
+				padding:0 0 0 72px;
+				text-decoration:none;
+				font-weight:bold;
+				color:#b4b4b4;
+				font-size:0.8rem;
+				background:white;
+			}
+
+			&:last-child{
+				border-bottom:1px solid #bbb;
+				height:52px;
+			}
+
+			&.appli a {
+				background:white image-url('appli_bg.png') no-repeat 15px center;
+			}
+
+			&.members a {
+				background:white image-url('members_bg.png') no-repeat 15px center;
+			}
+
+			&.active a {
+				background-color:#313131;
+			}
+		}
+	}	
+}
+
+#col-right {
+	width:80%;
+	float:left;
+	padding:0 0 12px 15px;
+
+	section {
+		@include border-radius(5px);
+		@include box-shadow(1px 0 5px #dbdbdb);
+		margin:0 0 5px;
+		padding:15px;
+		float:left;
+		width:100%;
+
+		.left {
+			width:190px;
+			float:left;
+			padding:125px 0 0 0;
+			margin:0 35px 0 0;
+
+			a {
+				display:block;
+				width:95%;
+				height:32px;
+				@include border-radius(5px);
+				background:#85c9fa;
+				text-align:center;
+				color:white;
+				font-size:0.8rem;
+				line-height:32px;
+				text-decoration:none;
+				margin:0 auto;
+			}
+		}
+
+		.center {
+			float:left;
+			width:400px;
+			margin:0 35px 0 0;
+
+			h1 {
+				font-size:1.5rem;
+				margin:15px 0;
+			}
+
+			p {
+				color:#666;
+				font-size:0.75rem;
+				line-height:0.95rem;
+			}
+		}
+
+		.diapo {
+			float:left;
+			border-top:1px solid #ccc;
+			margin:15px 0 0 0;
+			padding:15px 0 0 0;
+			width:100%;
+
+			#slider {
+				margin:0 0 0 30px;
+			}
+		}
+
+		.right {
+			float:left;
+			width:170px;
+
+			h2 {
+				font-size:1.3rem;
+				margin:15px 0;
+			}
+
+			li {
+				a {
+					color:#85c9fa;
+					background:image-url('blue_arrow.gif') no-repeat left center;
+					padding:0 0 0 15px;
+					text-decoration:none;
+					font-weight:bold;
+					font-size:0.85rem;
+					line-height:1.1rem;
+				}
+			}
+		}
+
+		&#carto .left {
+			background:image-url('carto_bg.png') no-repeat center 10px;
+		}
+
+		&#tasks .left {
+			background:image-url('tasks_bg.png') no-repeat center 10px;
+		}
+
+		&#webportal .left {
+			background:image-url('_TEMP/webportal.png') no-repeat center 10px;
+		}
+
+		&#filer .left {
+			background:image-url('_TEMP/filer.png') no-repeat center 10px;
+		}
+
+
+		&#more {
+			height:150px;
+			background:image-url('_TEMP/more.png') no-repeat center center;
+		}
+	}
+}

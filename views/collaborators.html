@@ -1,0 +1,60 @@
+<div ng-controller="GroupManagerCtrl">
+  <h2>Collaborateurs</h2>
+
+  <div class="workgroup" ng-repeat="group in groups">
+    <h3>Groupe de travail collaboratif "<strong>{{ group.name }}</strong>"</h3>
+    
+    <table class="table table-striped">
+      <tr>
+	<th>Nom d'utilisateur</th>
+	<th>Prénom</th>
+	<th>Nom</th>
+	<th>Actions</th>
+      </tr>
+      <!-- group members -->
+      <tr ng-repeat="user in group.users">
+	<td><strong>{{ user.username }}</strong></td>
+	<td>{{ user.profile.first_name }}</td>
+	<td>{{ user.profile.last_name }}</td>
+	<td>
+	  <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
+	  <button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Enlever du groupe</button>
+	</td>
+      </tr>
+    </table>
+
+    <form role="form" class="form-inline">
+      <p>
+	Ajouter un collaborateur dans {{ group.name }} :
+	<input class="form-control" type="text" ng-model="new_user.username" placeholder="nom d'utilisateur..."/>
+	<button type="button" class="btn btn-primary" ng-click="addUser(group.id)">Ajouter au groupe</button>
+      </p>
+      <p>
+	Le compte que vous ajoutez doit exister. Sinon, utilisez le formulaire ci-dessous pour créer un nouveau compte collaborateur.
+      </p>
+      <p class="text-warning">
+	<em>Notez qu'ajouter un collaborateur signifie qu'il pourra accéder à l'ensemble de vos données.</em>
+      </p>
+    </form>
+
+    <br/>
+    <br/>
+    <h3>Créer un nouveau compte <strong>collaborateur</strong></h3>
+    <form ng-controller="UserManagerCtrl" role="form" class="form-inline">
+      <p>
+	Nom d'utilisateur :
+	<input class="form-control" type="text" ng-model="new_user.username" placeholder="nom d'utilisateur...">
+      </p>
+      <br/>
+      <p>
+	Mot de passe :
+	<input class="form-control" type="password" ng-model="new_user.password" placeholder="mot de passe...">
+      </p>
+      <br/>
+      <button type="button" class="btn btn-primary" ng-click="createUser()">Créer ce compte</button>
+      <p ng-show="created">Utilisateur créé!</p>
+    </form>
+  </div>
+
+</div>
+

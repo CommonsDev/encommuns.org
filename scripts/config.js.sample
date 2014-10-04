@@ -1,0 +1,9 @@
+config = {
+    templateBaseUrl: '/views/',
+    bucket_uri: 'http://localhost:8000/bucket/upload/',
+    useHtml5Mode: false,
+    bucket_preview_uri: 'http://localhost:8000',
+    media_uri: 'http://localhost:8000/media/',
+    rest_uri: "http://localhost:8000/api/v0",
+    loginBaseUrl: "http://localhost:8000/api/v0/"
+}

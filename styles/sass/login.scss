@@ -1,0 +1,150 @@
+@import "compass/css3";
+
+/* ============= LOGIN ============= */
+#wrap-login {
+	background:rgba(133,201,250,0.8);
+	position:fixed;
+	width:100%;
+	height:100%;
+	min-height:100%;
+	top:0;
+	left:0;
+	z-index:32000;
+
+	#inner-login {
+		width:460px;
+		height:300px;
+		position:absolute;
+		top:45%;
+		left:50%;
+		margin:-150px -230px;
+
+		.left {
+			background:white;
+			float:left;
+			width:325px;
+			height:300px;
+			padding:15px 28px;
+			@include border-radius(6px 0 0 6px);
+		}
+
+		.right {
+			width:135px;
+			height:300px;
+			float:left;
+			background:#242424;
+			@include border-radius(0 6px 6px 0);
+
+			button {
+				height:140px;
+				width:100%;
+				color:white;
+				font-size:0.8rem;
+				padding-top:70px;
+				text-align:center;
+				border:0;
+				border-bottom:1px solid #040507;
+				border-top:1px solid #3a3a3a;
+
+				&.account {
+					background:image-url('login/inscription.png') no-repeat center 20px;
+					border-top:0;
+					margin:10px 0 0 0;
+				}
+
+				&.gplus {
+					background:image-url('login/gplus.png') no-repeat center 20px;
+					border-bottom:0;
+				}
+
+				&.facebook {
+					background:image-url('login/facebook.png') no-repeat center 10px;
+					border-bottom:0;
+					display:none;
+				}
+			}
+		}
+	}
+
+	.title {
+		color: #8B8B8B;
+	    font-size: 1.1rem;
+	    font-style: italic;
+	    font-weight: 500;
+	    line-height: 1.4rem;
+	    padding: 25px 0;
+	}
+
+	p {
+		float:left;
+		width:100%;
+		margin:0 0 8px;
+
+		label {
+			float:left;
+			display:block;
+			width:44px;
+			height:42px;
+			text-indent:-9999em;
+
+			&[for="login-field"] {
+				background:image-url('login/login_bt.gif') no-repeat top left;
+			}
+
+			&[for="pass-field"] {
+				background:image-url('login/password_bt.gif') no-repeat top left;
+			}
+		}
+
+		input[type="text"], input[type="password"] {
+			width:225px;
+			height:42px;
+			border:1px solid #dedede;
+			border-left:0;
+			padding-left:10px;
+			font-style:italic;
+			font-size:0.8rem;
+			color: #8B8B8B;
+			@include border-radius(0 5px 5px 0);
+		}
+
+		input:required {
+			@include box-shadow(none);
+		}
+	}
+
+	button.submit {
+		display:block;
+		float:left;
+		width:100%;
+		border:0;
+		background:#85c9fa;
+		height:42px;
+		color:white;
+		font-size:1rem;
+		@include border-radius(5px);
+	}
+
+	a.forgotten {
+		color: #2E394B;
+	    font-size: 0.8rem;
+	    font-style: italic;
+	    left: 2px;
+	    position: relative;
+	    text-decoration: none;
+	    top: 12px;
+	}
+
+	a.close {
+		display:block;
+		width:59px;
+		height:58px;
+		position:absolute;
+		bottom:-90px;
+		left:50%;
+		margin:0 -29px;
+		background:image-url('login/close.png') no-repeat top left;
+		outline:0;
+		text-indent:-9999em;
+	}
+}

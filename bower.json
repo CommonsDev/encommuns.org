@@ -1,0 +1,35 @@
+{
+  "name": "filer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/UnissonCo/webapps-center",
+  "authors": [
+    "Unisson Team <contact@unisson.co>"
+  ],
+  "description": "Unisson WebApps Center",
+  "main": "index.html",
+  "keywords": [
+    "unisson",
+    "software"
+  ],
+  "license": "AGPL v3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "modernizr": "~2.7.2",
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.16",
+    "angular-animate": "~1.2.16",
+    "angular-cookies": "~1.2.10",
+    "angular-ui-router": "0.2.8-bowratic-tedium",
+    "restangular": "~1.4.0",
+    "angular-unisson-auth": "~0.1.4"
+  }
+}
