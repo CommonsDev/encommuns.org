@@ -31,7 +31,7 @@ angular.element(document).on('ready page:load', ->
         # URI config
         .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) ->
                 $locationProvider.html5Mode(config.useHtml5Mode)
-                $urlRouterProvider.otherwise("/apps")
+                $urlRouterProvider.otherwise("/usages")
 
                 $stateProvider.state('apps',
                         url: '/apps'

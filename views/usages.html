@@ -1,25 +1,29 @@
 
 <div ng-controller="UsageManagerCtrl">
-  <h2>Communs</h2>
+  <h2>Lille en communs</h2>
 
   <div class="workgroup">
-      
+    <p>Ce site vient juste de se lancer durant Alternatiba Lille. Il va évoluer rapidement pour faciliter le travail autour des communs dans notre ville. </p><p>Chacun est amené à contribuer au développement de Lille en communs en proposant ou en rejoignant des initiatives. </p>  <br> 
+<p>Participez aux discussions sur les communs lillois  en <a href="https://ulists.org/mailman3/lists/lille-en-communs%40ulists.org/">vous inscrivant à la liste de discussion</a> ou sur le <a href="https://www.facebook.com/groups/1387527998204349/"> groupe Facebook "Lille en Communs"</a>.</p>
+<br>
+<p>Rendez vous chaque mardi à 18h à La Coroutine, au 8 rue Molière pour "commoniser" ensemble !</p>
+<br><p>Voici quelques "communs" lillois. Proposez de nouveaux communs sur lille-en-communs@ulists.org</p>
+<p>&nbsp;</p> 
     <table class="table table-striped">
       <tr>
   <th>Usage</th>
-  <th>Commun sélectionné</th>
-  <th>Pertinence sur 100</th>
-  <th>Actions</th>
+  <th>Commun</th>
+  <th>Contribution</th>
+  <th>Espace d'échanges</th>
       </tr>
       <!-- group members -->
       <tr ng-repeat="pertinence in pertinences">
   <td><strong>{{ pertinence.usage.label }}</strong></td>
-  <td>{{ pertinence.project.title }}</td>
-  <td>{{ pertinence.comment }}</td>
-
+  <td><a href="{{ pertinence.project.website }}">{{ pertinence.project.title }}</a></td>
+  <td>{{ pertinence.project.description }}</td>
   <td>
     <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Voir les autres projets</button>
+    <a href="{{ pertinence.project.baseline }}"><button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Rejoindre la discussion</button></a>
   </td>
       </tr>
     </table>
