@@ -47,9 +47,18 @@ angular.element(document).on('ready page:load', ->
                         )
                 .state('usages',
                         url: '/usages'
+
                         views:
                                 rightcol:
                                         templateUrl: 'views/usages.html'
+                                        controller: 'UsageManagerCtrl'
+                        )
+                .state('projects',
+                        url:'/p/:slug'
+                        views:
+                                rightcol:
+                                        templateUrl:'views/project_detail.html'
+                                        controller: 'UsageManagerCtrl'
                         )
         ])
 

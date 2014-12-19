@@ -1,5 +1,3 @@
-
-<div ng-controller="UsageManagerCtrl">
   <h2>Lille en communs</h2>
 
   <div class="workgroup">
@@ -9,28 +7,27 @@
 <p>Rendez vous chaque mardi à 18h à La Coroutine, au 8 rue Molière pour "commoniser" ensemble !</p>
 <br><p>Voici quelques "communs" lillois. Proposez de nouveaux communs sur lille-en-communs@ulists.org</p>
 <p>&nbsp;</p> 
+
+<div ng-repeat="usage in usages " class="table table-striped"><h3>Usage "<strong>{{usage.label}}</strong>"</h3>
     <table class="table table-striped">
       <tr>
-  <th>Usage</th>
-  <th>Commun</th>
-  <th>Contribution</th>
-  <th>Espace d'échanges</th>
+  <th>Communs répondant à l'usage</th>
+  <th>Echanges en ligne</th>
+  <th>Echanges en présentiel</th>
       </tr>
       <!-- group members -->
-      <tr ng-repeat="pertinence in pertinences">
-  <td><strong>{{ pertinence.usage.label }}</strong></td>
-  <td><a href="{{ pertinence.project.website }}">{{ pertinence.project.title }}</a></td>
-  <td>{{ pertinence.project.description }}</td>
+      <tr ng-repeat="project in usage.project">
+  <td><a href="{{ project.website }}" >{{ project.title }}</a></td>
+  <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
   <td>
     <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <a href="{{ pertinence.project.baseline }}"><button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Rejoindre la discussion</button></a>
+    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Rejoindre la discussion</button></a>
   </td>
       </tr>
     </table>
-
+</div>
 <p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
 <p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
   </div>
 
-</div>
 

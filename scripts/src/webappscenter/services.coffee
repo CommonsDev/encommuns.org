@@ -1,26 +1,23 @@
 module = angular.module('webappscenter.services', ['restangular'])
 
 module.factory('Usages', (Restangular) ->
-        return Restangular.service('usage')
+        return Restangular.service('project/commons/usage')
 )
 
 module.factory('Projects', (Restangular) ->
-        return Restangular.service('project')
+        return Restangular.service('project/project')
 )
 
 module.factory('Pertinences', (Restangular) ->
-    return Restangular.service('pertinence')
+    return Restangular.service('project/commons/pertinence')
+)
+
+module.factory('ProjectTools', (Restangular) ->
+    return Restangular.service('project/tool')
 )
 
 module.factory('EvaluationIngredient', (Restangular) ->
     return Restangular.service('evaluationingredient')
 )
 
-class UsageManagerCtrl
-        constructor: (@$scope, @Pertinences, @Projects, @Usages) ->
-                @$scope.pertinences = @Pertinences.getList().$object
-                @$scope.usages = @Usages.getList().$object
-                @$scope.projects = @Projects.getList().$object  
-
-module.controller("UsageManagerCtrl", ['$scope', 'Pertinences', 'Projects', 'Usages', 'EvaluationIngredient', UsageManagerCtrl])
 

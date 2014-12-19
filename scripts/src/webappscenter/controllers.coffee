@@ -15,6 +15,22 @@ module.controller("UserManagerCtrl", ($scope, Users) =>
                 )
 )
 
+class UsageManagerCtrl
+        constructor: (@$scope, @Pertinences, @Projects, @Usages, @ProjectsTools) ->
+                @$scope.pertinences = @Pertinences.getList().$object
+                @$scope.usages = @Usages.getList().$object
+                @$scope.projects = @Projects.getList().$object  
+                @$scope.projectstools = @ProjectsTools.getList().$object  
+
+module.controller("UsageManagerCtrl", ['$scope', 'Pertinences', 'Projects', 'Usages', 'ProjectTools', 'EvaluationIngredient', UsageManagerCtrl])
+
+
+module.controller("ProjectCtrl", ($scope, $stateParams,  Projects) ->
+
+    $scope.init = ->
+        return Projects.one().get({'project__slug' : $stateParams.slug})
+
+)
 
 class GroupManagerCtrl
         constructor: (@$scope, @Groups, @Users) ->
@@ -61,3 +77,6 @@ class GroupManagerCtrl
 
 
 module.controller("GroupManagerCtrl", ['$scope', 'Groups', 'Users', GroupManagerCtrl])
+
+#module.controller("EvaluationDetailCtrl", ($scope, $stateParams, Pertinences) ->
+#$scope.pertinence = Pertinences.one($stateParams.id).get().$object)
