@@ -54,11 +54,11 @@ angular.element(document).on('ready page:load', ->
                                         controller: 'UsageManagerCtrl'
                         )
                 .state('projects',
-                        url:'/p/:slug'
+                        url:'/:slug'
                         views:
                                 rightcol:
                                         templateUrl:'views/project_detail.html'
-                                        controller: 'UsageManagerCtrl'
+                                        controller: 'ProjectManagerCtrl'
                         )
         ])
 

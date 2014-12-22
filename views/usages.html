@@ -1,28 +1,32 @@
-  <h2>Lille en communs</h2>
+  <h2>Infrastructure en communs</h2>
 
   <div class="workgroup">
-    <p>Ce site vient juste de se lancer durant Alternatiba Lille. Il va évoluer rapidement pour faciliter le travail autour des communs dans notre ville. </p><p>Chacun est amené à contribuer au développement de Lille en communs en proposant ou en rejoignant des initiatives. </p>  <br> 
-<p>Participez aux discussions sur les communs lillois  en <a href="https://ulists.org/mailman3/lists/lille-en-communs%40ulists.org/">vous inscrivant à la liste de discussion</a> ou sur le <a href="https://www.facebook.com/groups/1387527998204349/"> groupe Facebook "Lille en Communs"</a>.</p>
+    <p>Ce site a une fonction simple : Recenser pour un usage l'ensemble des projets pensés autant que possibles comme des "communs libres" qui y répondent. Pour comprendre ce qu'est un commun, quelques informations ici. Une évaluation des communs permettra de se faire une idée du ou des communs les plus pertinents pour répondre à un usage. Le but est de favoriser la convergence du plus grand nombre vers certains "communs" afin d'éviter les doublons qui divisent les investissements des contributeurs. Cela vise aussi à aider les projets à bien réfléchir aux différents paramètres nécessaires pour être appropriés par le plus grand nombre. Pour participer au développement: contact@unisson.co</p>  
 <br>
-<p>Rendez vous chaque mardi à 18h à La Coroutine, au 8 rue Molière pour "commoniser" ensemble !</p>
-<br><p>Voici quelques "communs" lillois. Proposez de nouveaux communs sur lille-en-communs@ulists.org</p>
 <p>&nbsp;</p> 
 
-<div ng-repeat="usage in usages " class="table table-striped"><h3>Usage "<strong>{{usage.label}}</strong>"</h3>
+<div ng-repeat="usage in usages | filter:'infrastructure'" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
     <table class="table table-striped">
       <tr>
   <th>Communs répondant à l'usage</th>
-  <th>Echanges en ligne</th>
-  <th>Echanges en présentiel</th>
+  <th>Ingredients Unisson</th>
+  <th>Contributions en présentiel</th>
+  <th>Contribution en ligne</th>
+  <th>Soutenir le commun</th>
       </tr>
       <!-- group members -->
       <tr ng-repeat="project in usage.project">
+  
+ 
   <td><a href="{{ project.website }}" >{{ project.title }}</a></td>
+  <td><a href="/#/{{project.id}}"><img src="/img/tasks_bg.png" style="height:20px;"></img></a></td>
   <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
+ 
   <td>
     <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger" ng-click="deleteUser(group.id, user.resource_uri)">Rejoindre la discussion</button></a>
+    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre la discussion</button></a>
   </td>
+   <td>...</td>
       </tr>
     </table>
 </div>

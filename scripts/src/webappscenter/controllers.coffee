@@ -1,5 +1,6 @@
 module = angular.module('webappscenter.controllers', ['restangular', 'angular-unisson-auth'])
 
+
 module.controller("UserManagerCtrl", ($scope, Users) =>
         $scope.created = false
 
@@ -20,16 +21,27 @@ class UsageManagerCtrl
                 @$scope.pertinences = @Pertinences.getList().$object
                 @$scope.usages = @Usages.getList().$object
                 @$scope.projects = @Projects.getList().$object  
-                @$scope.projectstools = @ProjectsTools.getList().$object  
+                @$scope.projectstools = @ProjectsTools.getList().$object 
+                @$scope.filterWithTags = this.filterWithTags
+                @$scope.searchForm =
+                tags: []
+                @$scope.updateTagsFilter = this.updateTagsFilter
 
+         updateTagsFilter: ($event, tag) =>
+                @$scope.searchForm.tags.push(tag)
+         
+         filterWithTags: (actual, expected) =>
+                return _.every(@$scope.searchForm.tags, (tags_uri) =>
+                        return _.find(actual.tags, (tag) =>
+                                return tag.resource_uri == tag_uri
+                        )
+                )
+               
 module.controller("UsageManagerCtrl", ['$scope', 'Pertinences', 'Projects', 'Usages', 'ProjectTools', 'EvaluationIngredient', UsageManagerCtrl])
 
 
-module.controller("ProjectCtrl", ($scope, $stateParams,  Projects) ->
-
-    $scope.init = ->
-        return Projects.one().get({'project__slug' : $stateParams.slug})
-
+module.controller("ProjectManagerCtrl", ($scope, $stateParams,  Projects) ->
+         $scope.project = Projects.one($stateParams.slug).get().$object
 )
 
 class GroupManagerCtrl
