@@ -17,7 +17,7 @@ module.factory('ProjectTools', (Restangular) ->
 )
 
 module.factory('EvaluationIngredient', (Restangular) ->
-    return Restangular.service('unisson/evaluationingredient')
+    return Restangular.service('unisson/evaluation')
 )
 
 

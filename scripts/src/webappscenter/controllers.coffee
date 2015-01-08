@@ -1,4 +1,29 @@
-module = angular.module('webappscenter.controllers', ['restangular', 'angular-unisson-auth'])
+module = angular.module('webappscenter.controllers', ['restangular', 'angular-unisson-auth','chartjs'])
+
+
+
+module.controller("TestCtrl", ($scope) =>
+    $scope.lineChartData = {
+      labels: [
+        'Gouvernance'
+        'Technique'
+        'Contribution'
+        'Partage'
+        'Juridique'
+        'Mutualisation'
+        'Financement'
+        'Prestation'
+        'Partenaires'
+        'Evaluation'
+      ]
+      datasets: [
+        {
+          data: [0, 0, 0, 0, 0, 0,0,0,0,0]
+        }            
+      ]
+    }
+    $scope.activeData = $scope.lineChartData;
+)
 
 
 module.controller("UserManagerCtrl", ($scope, Users) =>
