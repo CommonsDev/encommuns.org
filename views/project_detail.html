@@ -16,6 +16,7 @@
         <ul ng-repeat="unisson in project.unisson">
                 <h3> {{ unisson.ingredient.ingredient }}  </h3>
               <b> {{ unisson.comment }}</b>
+
               <a data-toggle="collapse" href="#{{unisson.id}}" data-parent="#faqAccordion" class="accordion-toggle">  <!--  <span class="glyphicon glyphicon-info-sign"></span>--></span></a>
 
                <div id="{{unisson.id}}" class="accordion-body collapse out"><div class="accordion-inner">
@@ -36,10 +37,12 @@
               </div>
 
               </div>
+
+
             
 </div>
-            
             </ul>
+             <ul><li class="ng-binding" ng-repeat="label in project.tools"><br><br> {{ label.description }} <a href="{{ label.uri }}">{{ label.uri }}</a></li></ul>
             <div class="col-sm-6 col-md-6">
              </br>
              </br>
@@ -53,14 +56,6 @@
      
     </section>
     </div>
-
-    <!--
-    <cjs-bar></cjs-bar>
-    <cjs-line></cjs-line>
-    <cjs-radar></cjs-radar>
-    <cjs-polar></cjs-polar>
-    <cjs-pie></cjs-pie>
-    -->
 
     </div>
 

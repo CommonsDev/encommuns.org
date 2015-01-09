@@ -7,33 +7,7 @@
 <p>&nbsp;</p> 
 
 
-<div class="table table-striped"><h4>Usage "<strong class="ng-binding">Infrastructure -&gt; Méthode pour construire facilement des communs</strong>"</h4>
-    <table class="table table-striped">
-      <tbody><tr>
-  <th>Communs répondant à l'usage</th>
-  <th>Décryptage du commun</th>
-  <th>Contributions en présentiel</th>
-  <th>Contribution en ligne</th>
-  <th>Soutenir le commun</th>
-      </tr>
-      <!-- group members -->
-      <!-- ngRepeat: project in usage.project --><tr>
-  
- 
-  <td><a href="">Unisson</a></td>
-  <td><a href="/#/4"><img src="/img/tasks_bg.png" style="height:20px;"></a></td>
-  <td><!-- ngRepeat: label in project.tools | filter: 'présentiel' --><p ></p><!-- end ngRepeat: label in project.tools | filter: 'présentiel' --><p></p><!-- end ngRepeat: label in project.tools | filter: 'présentiel' --><p>Rencontre chaque mardi du mois à 18h à La Coroutine</p><!-- end ngRepeat: label in project.tools | filter: 'présentiel' --></td>
- 
-  <td>
-    <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <!-- ngRepeat: label in project.tools | filter: 'ligne' --><a href="http://lists.unisson.co/"><button type="button" class="btn btn-xs btn-danger">Rejoindre la discussion</button></a><!-- end ngRepeat: label in project.tools | filter: 'ligne' -->
-  </td>
-   <td>...</td>
-      </tr><!-- end ngRepeat: project in usage.project -->
-    </tbody></table>
-</div>
-
-<div ng-repeat="usage in usages | filter:'infrastructure'" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
+<div ng-repeat="usage in usages" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
     <table class="table table-striped">
       <tr>
   <th>Communs répondant à l'usage</th>
@@ -52,7 +26,7 @@
  
   <td>
     <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre la discussion</button></a>
+    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre</button></a>
   </td>
    <td>...</td>
       </tr>

@@ -1,4 +1,4 @@
-module = angular.module('webappscenter.controllers', ['restangular', 'angular-unisson-auth','chartjs'])
+module = angular.module('webappscenter.controllers', ['angular-loading-bar','restangular', 'angular-unisson-auth','chartjs'])
 
 
 

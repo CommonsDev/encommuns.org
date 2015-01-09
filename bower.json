@@ -31,6 +31,7 @@
     "angular-ui-router": "0.2.8-bowratic-tedium",
     "restangular": "~1.4.0",
     "angular-unisson-auth": "~0.1.4",
-    "ng-chartjs":"0.0.5"
+    "ng-chartjs":"0.0.5",
+    "angular-loading-bar": "~0.6.0"
   }
 }
