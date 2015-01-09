@@ -1,4 +1,4 @@
-  <h2>Infrastructure en communs</h2>
+  <h2>En communs</h2>
 
   <div class="workgroup">
     <p>Ce site a une fonction simple : Recenser pour un usage l'ensemble des projets pensés autant que possible comme des "communs libres" qui y répondent. Pour comprendre ce qu'est un commun, quelques informations <a href="http://unisson.co/communs">ici.</a></p>
@@ -21,7 +21,7 @@
   
  
   <td><a href="{{ project.website }}" >{{ project.title }}</a></td>
-  <td><a href="/#/{{project.id}}"><img src="/img/tasks_bg.png" style="height:20px;"></img></a></td>
+  <td><a href="/#/{{project.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
   <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
  
   <td>
@@ -35,5 +35,6 @@
 <p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
 <p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
   </div>
+
 
 

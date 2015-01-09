@@ -265,3 +265,26 @@ header {
 		}
 	}
 }
+
+.panel-default > .panel-heading {
+    width: 100%;
+    border-color: white !important;
+    border-radius: 0px;
+    background-color: #FFF !important;
+    }
+
+.panel {
+ border: 0px;
+ }
+
+.unidescription{
+	 margin-left: 15px;
+}
+.panel-title{	
+  	text-transform : capitalize;
+}	
+	
+.project-title{	
+  	text-transform : capitalize;
+}	
+	
