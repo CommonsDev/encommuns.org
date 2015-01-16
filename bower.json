@@ -32,6 +32,8 @@
     "restangular": "~1.4.0",
     "angular-unisson-auth": "~0.1.4",
     "ng-chartjs":"0.0.5",
-    "angular-loading-bar": "~0.6.0"
+    "angular-loading-bar": "~0.6.0",
+    "angular-bootstrap": "~0.12.0",
+
   }
 }
