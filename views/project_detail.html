@@ -27,10 +27,14 @@
   </accordion>
 
 
-       <p class="unidescription">{{ unisson.description }}  
-              <b> {{ unisson.comment }}</b>
+       <p class="unidescription">{{ unisson.description }}</p>
+              <p> {{ unisson.comment }}</p>
            
-         
+             <br>
+             <u class="project-title">Outils utilisés :</u>
+             </br>
+             <ul><li class="ng-binding" ng-repeat="label in project.tools"><p ng-if="label.category.baseline == unisson.ingredient.ingredient"> -> {{ label.description }} <a href="{{ label.uri }}">{{ label.uri }}</a> </p></li></ul>
+
                 </br></br>
               <div class="progress  progress-striped active">
               <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">{{unisson.adoption}}
@@ -42,8 +46,7 @@
             </br></br></br>
 
             </ul>
-            <h3 class="project-title">Outils utilisés</h3>
-            <ul><li class="ng-binding" ng-repeat="label in project.tools"><br><br> {{ label.description }} <a href="{{ label.uri }}">{{ label.uri }}</a></li></ul>
+           
             </div>    
              
             <div class="col-sm-6 col-md-6">
