@@ -53,6 +53,13 @@ angular.element(document).on('ready page:load', ->
                                         templateUrl: 'views/usages.html'
                                         controller: 'UsageManagerCtrl'
                         )
+                .state('prestations',
+                        url:'/prestations'
+                        views:
+                                rightcol:
+                                        templateUrl:'views/prestations.html'
+                                        controller: 'PrestationManagerCtrl'
+                        )
                 .state('projects',
                         url:'/:slug'
                         views:

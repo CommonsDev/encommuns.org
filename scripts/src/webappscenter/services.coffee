@@ -12,6 +12,10 @@ module.factory('Pertinences', (Restangular) ->
     return Restangular.service('project/commons/pertinence')
 )
 
+module.factory('Prestations', (Restangular) ->
+    return Restangular.service('project/commons/prestation')
+)
+
 module.factory('ProjectTools', (Restangular) ->
     return Restangular.service('project/tool')
 )

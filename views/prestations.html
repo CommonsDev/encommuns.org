@@ -1,0 +1,62 @@
+  <h2>En communs</h2>
+
+  <div class="workgroup">
+ 
+<br>  
+  <div ng-repeat="prestation in prestations" class="table table-striped"><h4>Prestation "<strong>{{prestation.title}}</strong>"</h4>
+  <p>{{prestation.description}}</p><br>
+    <table class="table table-striped">
+      <tr>
+  <th>Module</th>
+  <th>Prestataire</th>
+  <th>Commun sélectionné</th>
+  <th>Financement du prestataire</th>
+  <th>Soutien en nature du commun par le prestataire</th>
+  <th>Soutien financié au commun par le prestataire</th>
+      </tr>
+      <!-- group members -->
+      <tr ng-repeat="module in prestation.modules">
+  
+ 
+  <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
+  <td>{{ module.provider }}</a></td>
+  <td><p ng-repeat="projectprestation in module.project">{{ projectprestation.title }}</td>
+  <td>{{ module.providerretribution }}</td>
+  <td>{{ module.providersupport }}</td>
+  <td>{{ module.commonsretribution }}</td>
+  </tr>
+
+    </table>
+</div>
+
+  <div ng-repeat="prestation in prestations" class="table table-striped"><h4>Prestation "<strong>{{prestation.title}}</strong>"</h4>
+  <p>{{prestation.description}}</p><br>
+    <table class="table table-striped">
+      <tr>
+  <th>Module</th>
+  <th>Prestataire</th>
+  <th>Commun sélectionné</th>
+  <th>Financement du prestataire</th>
+  <th>Soutien en nature du commun par le prestataire</th>
+  <th>Soutien financié au commun par le prestataire</th>
+      </tr>
+      <!-- group members -->
+      <tr ng-repeat="module in prestation.modules">
+  
+ 
+  <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
+  <td>{{ module.provider }}</a></td>
+  <td>encommuns.org</td>
+  <td>{{ module.providerretribution }}</td>
+  <td>{{ module.providersupport }}</td>
+  <td>{{ module.commonsretribution }}</td>
+  </tr>
+
+    </table>
+</div>
+<p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
+<p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
+  </div>
+
+
+

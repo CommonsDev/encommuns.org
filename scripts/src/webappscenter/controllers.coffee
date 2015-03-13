@@ -18,7 +18,7 @@ module.controller("TestCtrl", ($scope) =>
       ]
       datasets: [
         {
-          data: [0, 0, 0, 0, 0, 0,0,0,0,0]
+          data: [230, 0, 0, 0, 0, 0,0,0,0,0]
         }            
       ]
     }
@@ -68,6 +68,13 @@ module.controller("UsageManagerCtrl", ['$scope', 'Pertinences', 'Projects', 'Usa
 module.controller("ProjectManagerCtrl", ($scope, $stateParams,  Projects) ->
          $scope.project = Projects.one($stateParams.slug).get().$object
 )
+
+class PrestationManagerCtrl
+        constructor: (@$scope, @Prestations) ->
+                @$scope.prestations = @Prestations.getList().$object    
+
+module.controller("PrestationManagerCtrl", ['$scope', 'Prestations', PrestationManagerCtrl])
+
 
 class GroupManagerCtrl
         constructor: (@$scope, @Groups, @Users) ->
