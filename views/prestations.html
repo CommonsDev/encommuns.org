@@ -1,61 +1,54 @@
-  <h2>En communs</h2>
+  <h2>Prestation en communs</h2>
+  <p> La méthode "Prestation en communs" vise à permettre de s'appuyer sur les "communs" pour des prestations tout en soutenant en nature et en financement les "communs".</br></br>
 
+   <accordion close-others="oneAtATime">
+    <accordion-group is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+    <accordion-heading> 
+            <button class="btn-group" style="float:right;" class="btn btn-info"><span class="glyphicon glyphicon-question-sign" ></span></button></accordion-heading>
+   Le budget du tableau ci dessous réflète l'usage de cette approche, en positionnant :<br><br>
+  - Une partie du financement au prestataire. Pour chaque besoin spécifique de l'étude qui ne trouve pas de réponse dans des communs, le prestataire va s'attribuer un budget afin soit d'améliorer le commun, soit adapter le commun pour les spécificités de la prestation. Vis à vis de ce buget, le prestataire indique ce qu'il va reverser en nature au "commun".
+  <br>
+  - Une partie des financements directement auprès de « communs ». Un financement dédié à un commun va à sa communauté qui utilise alors son propre modèle de répartition financier. Par exemple, chez wikipedia, le financement va à l'équipe de salarié de l'association alors que chez Gratipay.com, le financement va au collectif qui le redistribue grâce à <a href="https://gratipay.com/Gratipay/members/" target=_blank>un outil de répartition de la somme collectée selon les contributions.</a><br>
+  <br>En savoir plus sur <a href="http://unisson.co/prestation" target=_blank>la page wiki "prestation" du site unisson.co</a>
+     </accordion-group>
+  </accordion>
+
+   
+ 
+   
   <div class="workgroup">
- 
-<br>  
-  <div ng-repeat="prestation in prestations" class="table table-striped"><h4>Prestation "<strong>{{prestation.title}}</strong>"</h4>
-  <p>{{prestation.description}}</p><br>
-    <table class="table table-striped">
-      <tr>
-  <th>Module</th>
-  <th>Prestataire</th>
-  <th>Commun sélectionné</th>
-  <th>Financement du prestataire</th>
-  <th>Soutien en nature du commun par le prestataire</th>
-  <th>Soutien financié au commun par le prestataire</th>
-      </tr>
-      <!-- group members -->
-      <tr ng-repeat="module in prestation.modules">
+<br>
+  <br>  
+    
+    <div ng-repeat="prestation in prestations" class="table table-striped"><h4>Prestation "<strong>{{prestation.title}}</strong>"</h4>
+    <p>{{prestation.description}}</p><br>
+      <table class="table table-striped">
+        <tr>
+    <th>Module</th>
+    <th>Prestataire</th>
+    <th>Financement du prestataire</th>
+    <th>Commun sélectionné</th>
+    <th>Contribution en nature du prestataire au "commun"</th>
+    <th>Contribution financière du prestataire au "commun"</th>
+        </tr>
+        <!-- group members -->
+        <tr ng-repeat="module in prestation.modules">
+    
+   
+    <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
+    <td>{{ module.provider }}</a></td>
+    <td>{{ module.providerretribution }}</td>
+    <td><p ng-repeat="projectprestation in module.project">{{ projectprestation.title }}</td>
+    <td>{{ module.providersupport }}</td>
+    <td>{{ module.commonsretribution }}</td>
+    </tr>
+
+      </table>
+    </div>
+
+  <p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
+  <p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
   
- 
-  <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
-  <td>{{ module.provider }}</a></td>
-  <td><p ng-repeat="projectprestation in module.project">{{ projectprestation.title }}</td>
-  <td>{{ module.providerretribution }}</td>
-  <td>{{ module.providersupport }}</td>
-  <td>{{ module.commonsretribution }}</td>
-  </tr>
-
-    </table>
-</div>
-
-  <div ng-repeat="prestation in prestations" class="table table-striped"><h4>Prestation "<strong>{{prestation.title}}</strong>"</h4>
-  <p>{{prestation.description}}</p><br>
-    <table class="table table-striped">
-      <tr>
-  <th>Module</th>
-  <th>Prestataire</th>
-  <th>Commun sélectionné</th>
-  <th>Financement du prestataire</th>
-  <th>Soutien en nature du commun par le prestataire</th>
-  <th>Soutien financié au commun par le prestataire</th>
-      </tr>
-      <!-- group members -->
-      <tr ng-repeat="module in prestation.modules">
-  
- 
-  <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
-  <td>{{ module.provider }}</a></td>
-  <td>encommuns.org</td>
-  <td>{{ module.providerretribution }}</td>
-  <td>{{ module.providersupport }}</td>
-  <td>{{ module.commonsretribution }}</td>
-  </tr>
-
-    </table>
-</div>
-<p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
-<p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
   </div>
 
 
