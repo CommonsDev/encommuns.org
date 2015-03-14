@@ -60,6 +60,12 @@ angular.element(document).on('ready page:load', ->
                                         templateUrl:'views/prestations.html'
                                         controller: 'PrestationManagerCtrl'
                         )
+                .state('description',
+                        url:'/description'
+                        views:
+                                rightcol:
+                                        templateUrl:'views/description.html'
+                        )
                 .state('projects',
                         url:'/:slug'
                         views:
@@ -67,6 +73,7 @@ angular.element(document).on('ready page:load', ->
                                         templateUrl:'views/project_detail.html'
                                         controller: 'ProjectManagerCtrl'
                         )
+               
         ])
 
         # Google auth config

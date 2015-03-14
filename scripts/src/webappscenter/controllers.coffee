@@ -5,20 +5,20 @@ module = angular.module('webappscenter.controllers', ['angular-loading-bar','res
 module.controller("TestCtrl", ($scope) =>
     $scope.lineChartData = {
       labels: [
-        'Gouvernance'
-        'Technique'
+        'Governance '
+        'Technical'
         'Contribution'
-        'Partage'
-        'Juridique'
-        'Mutualisation'
-        'Financement'
-        'Prestation'
-        'Partenaires'
+        'Sharing'
+        'Legal'
+        'Pooling'
+        'Financing'
+        'Business'
+        'Partners'
         'Evaluation'
       ]
       datasets: [
         {
-          data: [230, 0, 0, 0, 0, 0,0,0,0,0]
+          data: [230, 200, 150, 30, 200, 400,300,250,180,290]
         }            
       ]
     }

@@ -7,12 +7,21 @@
     <meta name="description" content="software center">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700' rel='stylesheet' type='text/css'> -->
     <link href='scripts/vendor/bootstrap/dist/css/bootstrap.min.css' rel="stylesheet" type="text/css">
     <link href='styles/css/screen.css' rel='stylesheet' type='text/css'>
     <link href='styles/css/login.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="scripts/vendor/angular-loading-bar/src/loading-bar.css"/>
-  
+    <style type="text/css">
+    .nav > li > a {
+    padding: 16px 16px;
+    font-size: 14px;
+    color: #ccc;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    }
+    </style>
 
 
     <!-- vendor includes -->        
@@ -21,6 +30,7 @@
         <![endif]-->
   </head>
   <body>
+
     <!-- login box -->
     <div id="wrap-login" class="ng-cloak" ng-show="authVars.loginrequired">
       <div id="inner-login">
@@ -52,18 +62,19 @@
 
     <header>
       <div class="container">
-        <h1>Encommuns.org - Favoriser la convergence autour de "communs"</h1>
+         <ul class="nav nav-pills">
+    <li><a class="brand" href="/#/description">ENCOMMUNS.ORG</a></li>|
+    <li><a href="/#/usages">Usages</a></li>|
+    <li><a href="/#/prestations">Businesses</a></li>|
+    <li><a href="/#/832">Project Self-Evaluation Example</a></li>|
+    <li><a href="/#/description" >Description</a></li>
+    <li><a href="http://lists.unisson.co/pipermail/unisson/" target="_blank">Discussion</button></a></li>   
+    </ul>
 
-	<div ng-switch="authVars.isAuthenticated">
-          <a ng-switch-when="true" class="user">
-            <img src="img/_TEMP/avatar.jpg" alt="user" />
-            <span>{{ authVars.username }}</span>
-	    <span><button class="btn btn-sm btn-danger" ng-click="loginService.logout()">Déconnexion</button></span>
-          </a>
-	  <a href="http://lists.unisson.co/pipermail/unisson/" ng-switch-default class="user">
-	    <button class="btn btn-danger btn-sm">Rejoindre la liste de discussion</button>
-	  </a>
-	</div>
+        
+	
+
+
       </div>
     </header>
     <div id="content">
