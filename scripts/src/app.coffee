@@ -51,7 +51,6 @@ angular.element(document).on('ready page:load', ->
                         views:
                                 rightcol:
                                         templateUrl: 'views/usages.html'
-                                        controller: 'UsageManagerCtrl'
                         )
                 .state('prestations',
                         url:'/prestations'
@@ -65,6 +64,12 @@ angular.element(document).on('ready page:load', ->
                         views:
                                 rightcol:
                                         templateUrl:'views/description.html'
+                        )
+                .state('contribution',
+                        url:'/contribution'
+                        views:
+                                rightcol:
+                                        templateUrl:'views/contribution.html'
                         )
                 .state('projects',
                         url:'/:slug'

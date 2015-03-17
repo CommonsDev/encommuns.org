@@ -1,7 +1,7 @@
 module = angular.module('webappscenter.services', ['restangular'])
 
 module.factory('Usages', (Restangular) ->
-        return Restangular.service('project/commons/usage?limit=100')
+        return Restangular.service('project/commons/usage')
 )
 
 module.factory('Projects', (Restangular) ->

@@ -18,7 +18,7 @@ module.controller("TestCtrl", ($scope) =>
       ]
       datasets: [
         {
-          data: [230, 200, 150, 30, 200, 400,300,250,180,290]
+          data: [300, 300, 350, 400, 200,400,300,200,180,290]
         }            
       ]
     }
@@ -40,6 +40,25 @@ module.controller("UserManagerCtrl", ($scope, Users) =>
                         $scope.created = true
                 )
 )
+
+class ListUsageManagerCtrl
+        constructor: (@$scope, @Usages) ->
+                @$scope.usages = @Usages.getList().$object 
+module.controller("ListUsageManagerCtrl", ['$scope', 'Usages', ListUsageManagerCtrl])
+
+
+module.controller("DetailUsageManagerCtrl", ($scope, Usages) ->
+        $scope.detailledUsage = Usages.one($scope.usage.id).get().$object
+) 
+
+
+class PertinenceManagerCtrl
+        constructor: (@$scope, @Pertinences) ->
+                @$scope.pertinences = @Pertinences.getList().$object  
+
+
+module.controller("PertinenceManagerCtrl", ['$scope', 'Pertinences', PertinenceManagerCtrl])
+
 
 class UsageManagerCtrl
         constructor: (@$scope, @Pertinences, @Projects, @Usages, @ProjectsTools) ->
@@ -122,5 +141,3 @@ class GroupManagerCtrl
 
 module.controller("GroupManagerCtrl", ['$scope', 'Groups', 'Users', GroupManagerCtrl])
 
-#module.controller("EvaluationDetailCtrl", ($scope, $stateParams, Pertinences) ->
-#$scope.pertinence = Pertinences.one($stateParams.id).get().$object)

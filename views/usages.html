@@ -1,40 +1,48 @@
   <h2>En communs</h2>
 
-  <div class="workgroup">
-    <p>Ce site a une fonction simple : Recenser pour un usage l'ensemble des projets pensés autant que possible comme des "communs libres" qui y répondent. Pour comprendre ce qu'est un commun, quelques informations <a href="http://unisson.co/communs">ici.</a></p>
-    <br><p>Une évaluation des communs permettra de se faire une idée du ou des communs les plus pertinents pour répondre à un usage. Le but est de favoriser la convergence du plus grand nombre vers certains "communs" afin d'éviter les doublons qui divisent les investissements des contributeurs. Cela vise aussi à aider les projets à bien réfléchir aux différents paramètres nécessaires pour être appropriés par le plus grand nombre. Pour participer au développement, tout est sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a> ou se discuste sur cette <a href="http://lists.unisson.co/pipermail/unisson/">liste de discussion.</a></p>  
+<div class="workgroup">
+    <p>Cette page vise a recenser pour un usage l'ensemble des projets pensés autant que possible comme des "communs libres" qui y répondent. </p>
+    <br><p>Une évaluation des communs permettra de se faire une idée du ou des communs les plus pertinents pour répondre à un usage. Le but est de favoriser la convergence du plus grand nombre vers certains "communs" afin d'éviter les doublons qui divisent les investissements des contributeurs. Cela vise aussi à aider les projets à bien réfléchir aux différents paramètres nécessaires pour être appropriés par le plus grand nombre.</p>  
 <br>
 <p>&nbsp;</p> 
 
-
-<div ng-repeat="usage in usages" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
+<div ng-controller="ListUsageManagerCtrl">
+  <div ng-repeat="usage in usages" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
+       <button type="button" class="btn btn-xs" ng-click="affiche=!affiche">
+      <span ng-if="!affiche" class="glyphicon glyphicon-chevron-right"></span> <span ng-if="affiche" class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+     <div ng-if="affiche">
+    <div ng-controller="DetailUsageManagerCtrl">
     <table class="table table-striped">
       <tr>
-  <th>Communs répondant à l'usage</th>
-  <th>Décryptage du commun</th>
-  <th>Contributions en présentiel</th>
-  <th>Contribution en ligne</th>
-  <th>Soutenir le commun</th>
+        <th>Communs répondant à l'usage</th>
+        <th>Décryptage du commun</th>
+        <th>Contributions en présentiel</th>
+        <th>Contribution en ligne</th>
+        <th>Soutenir le commun</th>
       </tr>
-      <!-- group members -->
-      <tr ng-repeat="project in usage.project">
-  
- 
-  <td><a href="{{ project.website }}" >{{ project.title }}</a></td>
-  <td><a href="/#/{{project.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
-  <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
- 
-  <td>
-    <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-    <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre</button></a>
-  </td>
-   <td>...</td>
+            <!-- group members -->
+      <tr  ng-repeat="project in detailledUsage.project"> 
+        <td><a href="{{ project.website }}" >{{ project.title }}</a></td>
+        <td><a href="/#/{{project.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+        <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
+       
+        <td>
+          <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
+          <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre</button></a>
+        </td>
+         <td>...</td>
       </tr>
     </table>
-</div>
-<p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
-<p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
+    </div>
+    </div>
+    </div>
   </div>
 
 
 
+
+<p->Contenus sous licence libre CC BY-SA 4.0 et site développé en Angular (licence AGPL) disponible sur <a href="http://github.com/unissonco/encommuns.org">GITHUB</a>.</p>
+<p>Le site est basé sur une <a href="http://data.patapouf.org/api/v0/">API</a> ouverte de projets, du dataserveur en Django (licence AGPL) disponible sur <a href="https://github.com/UnissonCo/dataserver/">GITHUB</a>.</p>
+
+</div>
