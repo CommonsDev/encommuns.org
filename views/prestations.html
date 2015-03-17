@@ -38,7 +38,7 @@
     <td><a href="{{ prestation.link }}" >{{ module.title }}</a></td>
     <td>{{ module.provider }}</a></td>
     <td>{{ module.providerretribution }}</td>
-    <td><p ng-repeat="projectprestation in module.project">{{ projectprestation.title }}</td>
+    <td><p ng-repeat="projectprestation in module.project"><a href="/#/{{projectprestation.id }}">{{ projectprestation.title }}</a></td>
     <td>{{ module.providersupport }}</td>
     <td>{{ module.commonsretribution }}</td>
     </tr>
