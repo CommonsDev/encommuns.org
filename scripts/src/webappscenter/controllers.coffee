@@ -42,13 +42,17 @@ module.controller("UserManagerCtrl", ($scope, Users) =>
 )
 
 class ListUsageManagerCtrl
-        constructor: (@$scope, @Usages) ->
-                @$scope.usages = @Usages.getList().$object 
-module.controller("ListUsageManagerCtrl", ['$scope', 'Usages', ListUsageManagerCtrl])
+        constructor: (@$scope, @Pertinences) ->
+                @$scope.usages = @Pertinences.getList().$object 
+module.controller("ListUsageManagerCtrl", ['$scope', 'Pertinences', ListUsageManagerCtrl])
 
 
 module.controller("DetailUsageManagerCtrl", ($scope, OneUsage) ->
         $scope.detailledUsage = OneUsage.one($scope.usage.id).get().$object
+) 
+
+module.controller("DetailPertinenceManagerCtrl", ($scope, OnePertinence) ->
+        $scope.detailledPertinence = OnePertinence.one($scope.pertinence.id).get().$object
 ) 
 
 
@@ -56,8 +60,8 @@ class PertinenceManagerCtrl
         constructor: (@$scope, @Pertinences) ->
                 @$scope.pertinences = @Pertinences.getList().$object  
 
-
 module.controller("PertinenceManagerCtrl", ['$scope', 'Pertinences', PertinenceManagerCtrl])
+
 
 
 class UsageManagerCtrl

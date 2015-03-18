@@ -6,13 +6,16 @@
 <br>
 <p>&nbsp;</p> 
 
-<div ng-controller="ListUsageManagerCtrl">
-  <div ng-repeat="usage in usages" class="table table-striped"><h4>Usage "<strong>{{usage.label}}</strong>"</h4>
+
+<div ng-controller="PertinenceManagerCtrl">
+  <div ng-repeat="pertinence in pertinences |filter:'fabmob'" class="table table-striped"><h4><div ng-controller="DetailPertinenceManagerCtrl"><strong>{{ detailledPertinence.usage.label }}</strong></h4><div>  
        <button type="button" class="btn btn-xs" ng-click="affiche=!affiche">
       <span ng-if="!affiche" class="glyphicon glyphicon-chevron-right"></span> <span ng-if="affiche" class="glyphicon glyphicon-chevron-down"></span>
         </button>
      <div ng-if="affiche">
-    <div ng-controller="DetailUsageManagerCtrl">
+
+     <div ng-controller="DetailPertinenceManagerCtrl">
+
     <table class="table table-striped">
       <tr>
         <th>Communs répondant à l'usage</th>
@@ -22,23 +25,24 @@
         <th>Soutenir le commun</th>
       </tr>
             <!-- group members -->
-      <tr  ng-repeat="project in detailledUsage.project"> 
-        <td><a href="/#/{{project.id}}">{{ project.title }}</a></td>
-        <td><a href="/#/{{project.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
-        <td><p ng-repeat="label in project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
+      <tr > 
+        <td><a href="/#/{{detailledPertinence.project.id}}">{{ detailledPertinence.project.title }}</a></td>
+        <td><a href="/#/{{detailledPertinence.project.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+        <td><p ng-repeat="label in detailledPertinence.project.tools | filter: 'présentiel'">{{ label.description }}</p></td>
        
         <td>
           <!-- <button type="button" class="btn btn-xs btn-info" ng-click="">Accéder à sa page web</button>-->
-          <a ng-repeat="label in project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre</button></a>
+          <a ng-repeat="label in detailledPertinence.project.tools | filter: 'ligne'" href="{{ label.uri }}"><button type="button" class="btn btn-xs btn-danger">Rejoindre</button></a>
         </td>
          <td>...</td>
       </tr>
     </table>
+
     </div>
     </div>
     </div>
   </div>
-
+ 
 
 
 

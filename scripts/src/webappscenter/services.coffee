@@ -8,12 +8,15 @@ module.factory('OneUsage', (Restangular) ->
         return Restangular.service('project/commons/usage')
 )
 
-
 module.factory('Projects', (Restangular) ->
         return Restangular.service('project/project')
 )
 
 module.factory('Pertinences', (Restangular) ->
+    return Restangular.service('project/commons/pertinence?limit=2000')
+)
+
+module.factory('OnePertinence', (Restangular) ->
     return Restangular.service('project/commons/pertinence')
 )
 
