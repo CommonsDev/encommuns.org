@@ -1,0 +1,23 @@
+{
+"name": "encommuns",
+"version": "0.0.1",
+"description": "XXXX.",
+"author": {
+"name": "CommonsDev Team",
+"url": "http://github.com/UnissonCo/encommuns.org"
+},
+"main": "./lib/index",
+"dependencies": {
+"sass-brunch": "^1.8.6"
+},
+"devDependencies": {
+"bower": "latest",
+"brunch": "latest",
+"javascript-brunch": "latest",
+"coffee-script-brunch": "latest",
+"css-brunch": "latest",
+"ng-annotate-uglify-js-brunch": "latest",
+"clean-css-brunch": "latest",
+"auto-reload-brunch": "latest"
+}
+}
