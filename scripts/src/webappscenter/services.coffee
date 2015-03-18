@@ -4,6 +4,11 @@ module.factory('Usages', (Restangular) ->
         return Restangular.service('project/commons/usage?limit=300')
 )
 
+module.factory('OneUsage', (Restangular) ->
+        return Restangular.service('project/commons/usage')
+)
+
+
 module.factory('Projects', (Restangular) ->
         return Restangular.service('project/project')
 )

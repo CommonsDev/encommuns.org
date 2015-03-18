@@ -47,8 +47,8 @@ class ListUsageManagerCtrl
 module.controller("ListUsageManagerCtrl", ['$scope', 'Usages', ListUsageManagerCtrl])
 
 
-module.controller("DetailUsageManagerCtrl", ($scope, Usages) ->
-        $scope.detailledUsage = Usages.one($scope.usage.id).get().$object
+module.controller("DetailUsageManagerCtrl", ($scope, OneUsage) ->
+        $scope.detailledUsage = OneUsage.one($scope.usage.id).get().$object
 ) 
 
 
